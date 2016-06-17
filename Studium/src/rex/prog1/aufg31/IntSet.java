@@ -6,8 +6,8 @@ package rex.prog1.aufg31;
  * e2. As implied by its name, this class models the mathematical set
  * abstraction.
  *
- * @author Jane Doe 1234567 Group 42h
- * @author John Doe 1234567 Group 42h
+ * @author Rene Kudlek 4719142 Gruppe 4a
+ * @author Hauke Kunze 4731735 Gruppe 4a
  */
 public class IntSet {
     private int[] set;
@@ -160,9 +160,14 @@ public class IntSet {
         }
         System.out.println();
     }
-    
-    //---------------------------------- Aufg 31 -------------------------------//
-//    @Override
+
+    // ------------------------ Aufg 31 ----------------------//
+    /**
+     * The method creates s String showing the Elements of the set.
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
     public String toString() {
         String output = "Die Menge hat die Elemente: ";
         for (int aSet : set) {
@@ -170,7 +175,13 @@ public class IntSet {
         }
         return output;
     }
-    
+
+    /**
+     * This method checks whether the set contains the integer i.
+     * 
+     * @param i Integer to check.
+     * @return true if the set contains i.
+     */
     public boolean isIn(int i) {
         for (int laufInt : set) {
             if (laufInt == i) {
@@ -179,7 +190,13 @@ public class IntSet {
         }
         return false;
     }
-    
+
+    /**
+     * Checks whether s is a Sub-set of this object.
+     * 
+     * @param s The set s.
+     * @return true if the set s is a sub-set of this Object.
+     */
     public boolean isSubSet(IntSet s) {
         for (int laufInt : s.set) {
             if (!this.isIn(laufInt)) {
@@ -188,12 +205,18 @@ public class IntSet {
         }
         return true;
     }
-    
-//    @Override
+
+    /**
+     * Compares two IntSets.
+     * 
+     * @return true if the IntSets contain the same integers.
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
     public boolean equals(Object o) {
         if (o instanceof IntSet) {
-            if (((IntSet) o).isSubSet(this) && this.isSubSet((IntSet) o )) {
-                return true;              
+            if (((IntSet) o).isSubSet(this) && this.isSubSet((IntSet) o)) {
+                return true;
             }
         }
         return false;
