@@ -1,11 +1,23 @@
 package rex.prog1.aufg37;
 
+/**
+ * stating point of the programm
+ * 
+ * @author Rene Kudlek 4719142 Gruppe 4a
+ * @author Hauke Kunze 4731735 Gruppe 4a
+ */
 public class Start {
 
+    /**
+     * unnecessary constructor
+     */
     public Start() {
         // TODO Auto-generated constructor stub
     }
 
+    /**
+     * @param args means nothing starting method
+     */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 

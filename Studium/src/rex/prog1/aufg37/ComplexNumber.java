@@ -1,15 +1,36 @@
 package rex.prog1.aufg37;
 
+/**
+ * class for complex numbers
+ * 
+ * @author Rene Kudlek 4719142 Gruppe 4a
+ * @author Hauke Kunze 4731735 Gruppe 4a
+ */
 public class ComplexNumber extends Number {
 
+    /**
+     * the real part of the complex number
+     */
     public double reell;
+    /**
+     * the imaginary part of the number
+     */
     public double imaginar;
 
+    /**
+     * @param r value to be the real part of the number
+     * @param i value to be the imaginary part of the number
+     */
     public ComplexNumber(double r, double i) {
         reell = r;
         imaginar = i;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see rex.prog1.aufg37.Arithmetic#add(rex.prog1.aufg37.Number)
+     */
     @Override
     public void add(Number n) throws IllegalArgumentException {
         if (n instanceof ComplexNumber) {
@@ -20,6 +41,11 @@ public class ComplexNumber extends Number {
         }
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see rex.prog1.aufg37.Arithmetic#sub(rex.prog1.aufg37.Number)
+     */
     @Override
     public void sub(Number n) throws IllegalArgumentException {
         if (n instanceof ComplexNumber) {
@@ -30,6 +56,11 @@ public class ComplexNumber extends Number {
         }
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see rex.prog1.aufg37.Arithmetic#mul(rex.prog1.aufg37.Number)
+     */
     @Override
     public void mul(Number n) throws IllegalArgumentException {
         if (n instanceof ComplexNumber) {
@@ -44,6 +75,9 @@ public class ComplexNumber extends Number {
     }
 
     // Hilfsmethode fur Modulo
+    /**
+     * @return returns the modulo value of the complex number
+     */
     public double mod() {
         if (reell != 0 || imaginar != 0) {
             return Math.sqrt(reell * reell + imaginar * imaginar);
@@ -52,6 +86,11 @@ public class ComplexNumber extends Number {
         }
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see rex.prog1.aufg37.Arithmetic#div(rex.prog1.aufg37.Number)
+     */
     @Override
     public void div(Number n) throws IllegalArgumentException {
         if (n instanceof ComplexNumber) {
@@ -62,12 +101,22 @@ public class ComplexNumber extends Number {
         throw new IllegalArgumentException("Error");
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see rex.prog1.aufg37.Arithmetic#abs()
+     */
     @Override
     public double abs() {
         // TODO Auto-generated method stub
         return 0;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Comparable#compareTo(java.lang.Object)
+     */
     @Override
     public int compareTo(Object o) throws IllegalArgumentException {
         if (o instanceof ComplexNumber) {
@@ -76,11 +125,21 @@ public class ComplexNumber extends Number {
         throw new IllegalArgumentException("Error");
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#clone()
+     */
     @Override
     public ComplexNumber clone() {
         return new ComplexNumber(reell, imaginar);
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
     public String toString() {
         return "" + reell + " " + imaginar;
     }
